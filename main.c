@@ -8,11 +8,11 @@ int main(){
     }
     print_list(list);
 
-    LIST_NODE find_node1 = find_nodevalue(list, 3);
-    printf("按值查找结果为：%d\n", find_node1->data);
+    int find_node1 = find_nodevalue(list, 3);
+    printf("按值查找结果为：%d\n", find_node1);
 
-    LIST_NODE find_node2 = find_nodekth(list, 1);
-    printf("按序号查找结果为： %d\n", find_node2->data);
+    int find_node2 = find_nodekth_value(list, 1);
+    printf("按序号查找结果为： %d\n", find_node2);
 
     delete_node(list, 2);
     delete_node(list, 2);

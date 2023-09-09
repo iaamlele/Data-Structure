@@ -74,7 +74,7 @@ void add_list(LIST my_list, int x, int num) {
 }
 
 //查找：按值查找
-LIST_NODE find_nodevalue(LIST my_list, int x){
+int find_nodevalue(LIST my_list, int x){
     if(my_list->length == 0) {
         return NULL;
     }else {
@@ -85,13 +85,13 @@ LIST_NODE find_nodevalue(LIST my_list, int x){
             i++;
         }
         if(current->data == x)
-            return current;
+            return current->data;
         else 
             return NULL;
     }
 }
 
-//查找：按序号查找
+//查找：按序号查找，返回结点
 LIST_NODE find_nodekth(LIST my_list, int x) {
     if(my_list->length == 0 || x > my_list->length || x < 1) {
         return NULL;
@@ -113,6 +113,11 @@ LIST_NODE find_nodekth(LIST my_list, int x) {
         if(i == x) return current;
         else return NULL; 
     }
+}
+//查找：按序号查找，返回值
+int find_nodekth_value(LIST my_list, int x) {
+    LIST_NODE current = find_nodekth(my_list, x);
+    return current->data;
 }
 
 //删除：删除第x个结点
